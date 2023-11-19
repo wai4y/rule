@@ -51,6 +51,7 @@ prixy-groups:
 rule-providers:
 
   Netflix-rules:
+    type: http
     behavior: classical
     interval: 86400
     format: yaml
