@@ -60,7 +60,7 @@ proxy-groups:
  - {name: Proxy, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Rocket.png, <<: *g, proxies: [Fallback,HongKong,TaiWan,Singapore,Japan,America,Others]}
 
 # 自动选择
-#  - {name: Auto, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Auto.png, type: url-test, lazy: true, <<: *u}
+ - {name: Auto, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Auto.png, type: url-test, lazy: true, <<: *u}
 
 # 故障转移
  - {name: Fallback, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Available.png, type: fallback, <<: *u}
