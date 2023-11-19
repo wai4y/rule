@@ -39,7 +39,8 @@ proxy-providers:
 
 proxies: null
 
-prixy-groups:
+proxy-groups:
+
   - name: Proxy
     type: select
     use:
