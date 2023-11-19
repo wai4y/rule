@@ -62,6 +62,7 @@ proxy-providers:
     # 使用Clash类型订阅链接替换掉引号""内的链接使用。
     # 或可使用通用订阅链接通过Sub-Store进行订阅转换(用于Stash)。
     interval: 86400
+    type: http
     health-check:
       enable: true
       interval: 300
