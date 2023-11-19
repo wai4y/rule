@@ -39,9 +39,9 @@ d: &d {type: http, behavior: domain, interval: 86400}
 p: &p {type: http, interval: 42300, health-check: {enable: true, url: http://www.apple.com/library/test/success.html, interval: 300}}
 
 # 代理组相关
-g: &g {type: select, proxies: [Proxy, Auto, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others, DIRECT]}
+g: &g {type: select, proxies: [Proxy, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others, DIRECT, Mainland]}
 
-m: &m {type: select, proxies: [DIRECT, Proxy, Auto, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others]}
+m: &m {type: select, proxies: [DIRECT, Proxy, Fallback, HongKong, TaiWan, Singapore, Japan, America, Others, Mainland]}
 
 # 本地服务器
 proxies: null
@@ -62,10 +62,10 @@ proxy-groups:
  - {name: Final, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Final.png, <<: *g, proxies: [Proxy,DIRECT]}
 
 # 节点切换
- - {name: Proxy, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Rocket.png, <<: *g, proxies: [Auto,Fallback,HongKong,TaiWan,Singapore,Japan,America,Others]}
+ - {name: Proxy, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Rocket.png, <<: *g, proxies: [Fallback,HongKong,TaiWan,Singapore,Japan,America,Others,Mainland]}
 
 # 自动选择
- - {name: Auto, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Auto.png, type: url-test, lazy: true, <<: *u}
+#  - {name: Auto, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Auto.png, type: url-test, lazy: true, <<: *u}
 
 # 故障转移
  - {name: Fallback, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Available.png, type: fallback, <<: *u}
@@ -74,7 +74,7 @@ proxy-groups:
  - {name: Global, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Global.png, <<: *g}
 
 # 国内网站
- - {name: Mainland, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/China_Map.png, <<: *m, proxies: [DIRECT,Proxy,Auto]}
+ - {name: Mainland, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/China_Map.png, <<: *g}
 
 # 人工智能
  - {name: OpenAI, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Bot.png, <<: *g, proxies: [America,Japan,Singapore,TaiWan,Others]}
@@ -87,6 +87,9 @@ proxy-groups:
 
 # 迪士尼+
  - {name: Disney+, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Disney%2B.png, <<: *g}
+
+# HBO
+ - {name: HBO, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Disney%2B.png, <<: *g}
 
 # Emby
  - {name: Emby, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Emby.png, <<: *g}
@@ -166,6 +169,9 @@ rule-providers:
 # 迪士尼+
  disney: {<<: *c, path: ./rules/disney.yaml, url: https://raw.githubusercontents.com/ACL4SSR/ACL4SSR/master/Clash/Providers/Ruleset/DisneyPlus.yaml}
 
+# HBO
+ HBO-rules: {<<: *c, path: ./rules/hbo.yaml, url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/HBO/HBO_No_Resolve.yaml}
+
 # Emby
  emby: {<<: *c, path: ./rules/emby.yaml, url: https://raw.githubusercontents.com/blackmatrix7/ios_rule_script/master/rule/Clash/Emby/Emby.yaml}
 
@@ -236,6 +242,7 @@ rules:
   - RULE-SET,youtube,YouTube
   - RULE-SET,netflix,NETFLIX
   - RULE-SET,disney,Disney+
+  - RULE-SET,HBO-rules,HBO
   - RULE-SET,emby,Emby
   - RULE-SET,bahamut,TaiWan
   - RULE-SET,biliintl,Streaming
