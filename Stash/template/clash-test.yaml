@@ -37,9 +37,9 @@ proxy-providers:
       interval: 300
       url: http://www.apple.com/library/test/success.html
 
-proxies: null
+proxies:
 
-proxy-groups:
+proxy-groups: 
 
   - name: Proxy
     type: select
