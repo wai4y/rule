@@ -84,7 +84,7 @@ proxy-groups:
  - {name: Disney+, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Disney%2B.png, <<: *g}
 
 # HBO
- - {name: HBO, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Disney%2B.png, <<: *g}
+ - {name: HBO, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/HBO.png, <<: *g}
 
 # Emby
  - {name: Emby, icon: https://raw.githubusercontents.com/Koolson/Qure/master/IconSet/mini/Emby.png, <<: *g}
