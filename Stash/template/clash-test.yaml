@@ -49,8 +49,8 @@ proxy-groups:
 
   - name: Netflix
     type: select
-    proxies:
-      *G
+    use:
+      - MyProxy
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
 
 #远程规则集合
