@@ -39,7 +39,7 @@ proxy-providers:
 
 proxies:
 
-proxy-groups: 
+proxy-groups:
   - name: Proxy
     type: select
     use:
@@ -69,4 +69,4 @@ rules:
 
 script:
   shortcuts:
-    quic: network == 'udp' and dst_port == 443 
+    quic: network == 'udp' and dst_port == 443
